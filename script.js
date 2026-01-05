@@ -57,3 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultTab = document.querySelector('.style-tab.active');
     changeStyle('blackwork', defaultTab);
 });
+
+// Función para acomodar el selector
+window.addEventListener('scroll', function() {
+    const selector = document.getElementById('style-selector');
+    const stylesSection = document.getElementById('styles');
+    const rect = stylesSection.getBoundingClientRect();
+    if (rect.top <= 100 && rect.bottom >= 100) {
+        selector.style.position = 'absolute';
+        selector.style.top = '20px';
+        selector.style.left = '20px';
+        selector.style.transform = 'scale(1.5)';
+        selector.style.fontSize = '1rem';
+    } else {
+        selector.style.position = 'fixed';
+        selector.style.top = '20px';
+        selector.style.left = '20px';
+        selector.style.transform = 'scale(1)';
+        selector.style.fontSize = '0.7rem';
+    }
+});
